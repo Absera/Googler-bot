@@ -27,6 +27,7 @@ def respond():
     command = text_list[0]
     formatted = " ".join(text_list[1:])
 
+    bot.sendMessage(chat_id=chat_id, text="WELCOME", reply_to_message_id=msg_id)
     if command == "/start":
         bot.sendMessage(chat_id=chat_id, text=formatted, reply_to_message_id=msg_id)
     elif command == "/go":
