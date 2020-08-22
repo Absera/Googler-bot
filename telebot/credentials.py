@@ -1,3 +1,3 @@
-bot_token = "1321472233:AAHFjmVFS6nwalM8IzUCR1sSkJSaDXT3_GA"
-bot_user_name = "http://t.me/absera_test_bot"
+bot_token = "1396812975:AAHYDLQVgxLEGf9JeRIUyRVKhFKpS-Zm6gw"
+bot_user_name = "http://t.me/googoolerBot"
 URL = "https://googler-bot.herokuapp.com/"
