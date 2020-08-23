@@ -18,6 +18,7 @@ lyrics = Lyrics()
 
 @app.route('/{}'.format(TOKEN), methods=['POST'])
 def respond():
+    welcome = "WELCOME"
     update = telegram.Update.de_json(request.get_json(force=True), bot)
 
     chat_id = update.message.chat.id
@@ -27,17 +28,16 @@ def respond():
     command = text_list[0]
     formatted = " ".join(text_list[1:])
 
-    bot.sendMessage(chat_id=chat_id, text="WELCOME", reply_to_message_id=msg_id)
     if command == "/start":
-        bot.sendMessage(chat_id=chat_id, text=formatted, reply_to_message_id=msg_id)
+        bot.sendMessage(chat_id=chat_id, text=welcome, reply_to_message_id=msg_id)
     elif command == "/go":
-        bot.sendMessage(chat_id=chat_id, text=formatted, reply_to_message_id=msg_id)
+        bot.sendMessage(chat_id=chat_id, text=google.search(formatted), reply_to_message_id=msg_id)
     elif command == "/lyrics":
-        bot.sendMessage(chat_id=chat_id, text="Lyricsing...", reply_to_message_id=msg_id)
-    elif command == "/dict":
-        bot.sendMessage(chat_id=chat_id, text="Translating...", reply_to_message_id=msg_id)
+        bot.sendMessage(chat_id=chat_id, text=lyrics.search(formatted), reply_to_message_id=msg_id)
+    elif command == "/word":
+        bot.sendMessage(chat_id=chat_id, text=word.translate(formatted), reply_to_message_id=msg_id)
     else:
-        bot.sendMessage(chat_id=chat_id, text="Please Enter Valid Command!", reply_to_message_id=msg_id)
+        bot.sendMessage(chat_id=chat_id, text="Please Enter A Valid Command!", reply_to_message_id=msg_id)
 
     return 'ok'
 
