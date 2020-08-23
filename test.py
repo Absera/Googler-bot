@@ -1,5 +1,3 @@
-from telebot.main import Google, Lyrics, Word
+from telebot.main import Lyrics
 
-lyrics = Lyrics()
-l = lyrics.search("shape of youbnbmnbm")
-print(l)
+print(Lyrics.search("boom"))
