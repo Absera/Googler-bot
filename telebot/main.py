@@ -54,7 +54,7 @@ class Lyrics:
 
 		return label+"\n"+lyrics[0].text
 
-
+		
 class Word:
 	@staticmethod
 	def translate(word):
@@ -85,5 +85,4 @@ class Word:
 			return word_list
 		else:
 			return ["NO WORD FOUND!"]
-
 
