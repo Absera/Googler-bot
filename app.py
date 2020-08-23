@@ -31,11 +31,14 @@ def respond():
     if command == "/start":
         bot.sendMessage(chat_id=chat_id, text=welcome, reply_to_message_id=msg_id)
     elif command == "/go":
-        bot.sendMessage(chat_id=chat_id, text=google.search(formatted), reply_to_message_id=msg_id)
+        # search_result = google.search(formatted)
+        bot.sendMessage(chat_id=chat_id, text=formatted, reply_to_message_id=msg_id)
     elif command == "/lyrics":
-        bot.sendMessage(chat_id=chat_id, text=lyrics.search(formatted), reply_to_message_id=msg_id)
+        lyrics_result = lyrics.search(formatted)
+        bot.sendMessage(chat_id=chat_id, text=lyrics_result, reply_to_message_id=msg_id)
     elif command == "/word":
-        bot.sendMessage(chat_id=chat_id, text=word.translate(formatted), reply_to_message_id=msg_id)
+        word_result = word.translate(formatted)
+        bot.sendMessage(chat_id=chat_id, text=word_result, reply_to_message_id=msg_id)
     else:
         bot.sendMessage(chat_id=chat_id, text="Please Enter A Valid Command!", reply_to_message_id=msg_id)
 
