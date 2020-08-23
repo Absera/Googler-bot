@@ -33,7 +33,7 @@ def respond():
     elif command == "/go":
         bot.sendMessage(chat_id=chat_id, text=google.search(formatted), reply_to_message_id=msg_id)
     elif command == "/lyrics":
-        bot.sendMessage(chat_id=chat_id, text=lyrics.search("shape of you"), reply_to_message_id=msg_id)
+        bot.sendMessage(chat_id=chat_id, text=lyrics.search(formatted), reply_to_message_id=msg_id)
     elif command == "/word":
         bot.sendMessage(chat_id=chat_id, text=word.translate(formatted), reply_to_message_id=msg_id)
     else:

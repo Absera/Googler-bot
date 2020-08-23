@@ -40,7 +40,7 @@ class Lyrics:
 				for j in i.find_all('a'):
 					if not j.has_attr('class') and len(lyrics) <= 1:
 						lyrics.append([j.text, j.get('href')])
-		if len(lyrics) >= 1:
+		if len(lyrics) != 0:
 			return Lyrics.getLyrics(lyrics[0][0], lyrics[0][1])
 		else:
 			return "No Lyrics Found"
@@ -54,7 +54,7 @@ class Lyrics:
 
 		return label+"\n"+lyrics[0].text
 
-		
+
 class Word:
 	@staticmethod
 	def translate(word):
